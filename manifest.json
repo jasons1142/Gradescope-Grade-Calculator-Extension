@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Gradescope Grade Calculator",
     "version": "0.0.1",
-    "description": "Val and Jason's Grade Calculator Extension",
+    "description": "Val and Jason's Extension",
     "icons": {
         "16": "icon.png",
         "48": "icon.png",
