@@ -1,0 +1,10 @@
+{
+    "extensionName": {
+        "message": "Gradescope Grade Calculator",
+        "description": "The name of the extention"
+    },
+    "extensionDescriptioin": {
+        "message": "An extension meant to calculate averaages on gradescope",
+        "description": "An extension meant to calculate averages on gradescope"
+    }
+}
