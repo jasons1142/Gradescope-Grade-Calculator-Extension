@@ -17,5 +17,15 @@
             "128": "icon.png"
         },
         "default_title": "Grade Calculator"
-    }
+    },
+    "content_scripts":[
+        {
+            "matches":[
+                "https://*.gradescope.com/courses/*"
+            ],
+            "js":[
+                "contentScript.js"
+            ]
+        }
+    ]
 }
