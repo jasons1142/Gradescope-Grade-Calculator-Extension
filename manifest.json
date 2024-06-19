@@ -22,6 +22,9 @@
         {
             "matches":[
                 "https://*.gradescope.com/courses/*"
+            ],
+            "js":[
+                "contentScript.js"
             ]
         }
     ]
