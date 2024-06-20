@@ -29,6 +29,6 @@
         }
     ],
     "permissions":[
-        "https://*.gradescope.com/courses/*"
+        "https://gradescope.com/courses/"
     ]
 }
