@@ -2,3 +2,45 @@ body{
   height: 400px;
   width: 350px;
 }
+.center{
+        margin: 0;
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .button{
+        background-color: #000000;
+        border: 2px solid #000000;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 12px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: #5166FF;
+        border: 2px solid #000000;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .button1:hover {
+        background-color: #0017BA;
+        color: white;
+    }
