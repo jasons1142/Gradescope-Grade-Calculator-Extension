@@ -28,7 +28,7 @@
             ]
         }
     ],
-    "permissions":[
+    "host_permissions":[
         "https://gradescope.com/courses/"
     ]
 }
