@@ -28,4 +28,7 @@
             ]
         }
     ]
+    "permissions":[
+        "https://*.gradescope.com/courses/*"
+    ]
 }
