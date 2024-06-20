@@ -27,7 +27,7 @@
                 "contentScript.js"
             ]
         }
-    ]
+    ],
     "permissions":[
         "https://*.gradescope.com/courses/*"
     ]
