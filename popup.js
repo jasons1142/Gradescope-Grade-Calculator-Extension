@@ -4,6 +4,17 @@ document.addEventListener("DOMContentLoaded", function(){getData()}); //once loa
 //function displayAverage(average) {
     //document.getElementById('average').textContent = "Average of scores: " + average;
 //}
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  if (message.from === 'background' && message.action === 'updatePopup') {
+    // Update the popup HTML based on the message received
+    if (message.message === 'Not on Gradescope') {
+      document.querySelector('.extension').innerHTML = `
+        <h1>Uh oh, looks like you're not on Gradescope!</h1>
+        <p>To calculate your grade, navigate to one of your courses on Gradescope.</p>
+      `;
+    }
+  }
+});
 
 //send message to gradescope so that we may get data
 function getData(){
