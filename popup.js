@@ -18,4 +18,9 @@ function getData(){
 //check if we received message and if we did call function
 chrome.runtime.onMessage.addListener(receivedMessage);
 
-function receivedMessage(message, sender, sendResponse){};
+function receivedMessage(message, sender, sendResponse){
+
+    //if (request.length != # assignments) {
+        //document.getElementsByClassName
+    //}
+};
