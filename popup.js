@@ -1,4 +1,4 @@
-//load in content
+//load in contenthttps://github.com/jasons1142/Gradescope-Grade-Calculator-Extension/blob/main/popup.js
 document.addEventListener("DOMContentLoaded", function(){getData()}); //once loaded in get the data from gradescope
 
 //function displayAverage(average) {
@@ -18,4 +18,4 @@ function getData(){
 //check if we received message and if we did call function
 chrome.runtime.onMessage.addListener(receivedMessage);
 
-function receivedMessage(){};
+function receivedMessage(message, sender, sendResponse){};
