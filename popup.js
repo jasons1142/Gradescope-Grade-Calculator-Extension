@@ -1,9 +1,3 @@
-//load in content
-document.addEventListener("DOMContentLoaded", function(){getData()}); //once loaded in get the data from gradescope
-
-//function displayAverage(average) {
-    //document.getElementById('average').textContent = "Average of scores: " + average;
-//}
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   if (message.from === 'background' && message.action === 'updatePopup') {
     // Update the popup HTML based on the message received
@@ -15,6 +9,15 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     }
   }
 });
+
+
+//load in content
+document.addEventListener("DOMContentLoaded", function(){getData()}); //once loaded in get the data from gradescope
+
+//function displayAverage(average) {
+    //document.getElementById('average').textContent = "Average of scores: " + average;
+//}
+
 
 //send message to gradescope so that we may get data
 function getData(){
