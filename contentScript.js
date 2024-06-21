@@ -1,6 +1,6 @@
 alert('Hello')
 function extractScores() {
-    const scoreElements = document.getElementsByClassName("submissionStatus--Score");
+    const scoreElements = document.getElementsByClassName("submissionStatus--score");
     const scores = Array.from(scoreElements).map(el=>parseFloat(el.innerText));
     return scores;
 }
