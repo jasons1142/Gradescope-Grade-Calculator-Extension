@@ -1,4 +1,4 @@
-//load in contenthttps://github.com/jasons1142/Gradescope-Grade-Calculator-Extension/blob/main/popup.js
+//load in content
 document.addEventListener("DOMContentLoaded", function(){getData()}); //once loaded in get the data from gradescope
 
 //function displayAverage(average) {
