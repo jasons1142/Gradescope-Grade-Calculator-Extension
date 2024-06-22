@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){getData()}); //once loa
 //send message to gradescope so that we may get data
 function getData(){
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){
-        let message{
+        let message = {
             txt: "getmydata"
         }
         chrome.tabs.sendMessage(tabs[0].id, message); //send message to current window
