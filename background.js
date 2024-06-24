@@ -7,9 +7,3 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         }
     }
 });
-
-chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
-    if (!details.url.startsWith("https://gradescope.com/courses")) {
-        chrome.action.setPopup({ popup: 'NotOnGradescopePopup.html' }); 
-    }
-});
