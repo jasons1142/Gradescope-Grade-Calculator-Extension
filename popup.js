@@ -1,16 +1,3 @@
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-  if (message.from === 'background' && message.action === 'updatePopup') {
-    // Update the popup HTML based on the message received
-    if (message.message === 'Not on Gradescope') {
-      document.querySelector('.extension').innerHTML = `
-        <h1>Uh oh, looks like you're not on Gradescope!</h1>
-        <p>To calculate your grade, navigate to one of your courses on Gradescope.</p>
-      `;
-    }
-  }
-});
-
-
 //load in content
 document.addEventListener("DOMContentLoaded", function(){getData()}); //once loaded in get the data from gradescope
 
