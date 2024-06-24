@@ -24,3 +24,9 @@ chrome.runtime.sendMessage({
   from: 'content',
   isOnGradescope: isOnGradescope(window.location.href)
 });
+
+
+//find out if the tab has been changed
+sendMessageToBackground();
+window.addEventListener('hashchange', sendMessageToBackground);
+window.addEventListener('popstate', sendMessageToBackground);
