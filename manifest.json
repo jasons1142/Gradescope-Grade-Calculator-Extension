@@ -30,7 +30,8 @@
     ],
     "permissions":[
         "tabs",
-        "activeTab"
+        "activeTab",
+        "webNavigation"
     ],
     "background":{
         "service_worker": "background.js"
