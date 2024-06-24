@@ -26,7 +26,3 @@ chrome.runtime.sendMessage({
 });
 
 
-//find out if the tab has been changed
-sendMessageToBackground();
-window.addEventListener('hashchange', sendMessageToBackground);
-window.addEventListener('popstate', sendMessageToBackground);
