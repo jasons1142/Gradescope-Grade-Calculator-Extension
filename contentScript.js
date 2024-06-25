@@ -1,5 +1,5 @@
 //alert('Hello')
-function extractSubmissions() {
+/* function extractSubmissions() {
     const submissions = [];
     const submissionRows = document.querySelectorAll('tr.odd, tr.even');
 
@@ -21,6 +21,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse({submissions: submissions});
     }
 });
+*/
 
 //function calculateAverage(scores) {
    // if (scores.length == 0) return 0;
