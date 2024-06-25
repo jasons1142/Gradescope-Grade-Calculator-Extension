@@ -41,3 +41,24 @@ function checkBoxes(grades){
 function textBoxes(grades){
     
 };
+
+function createSubmissionButtons(submissions) {
+  const container = document.getElementById('submissions-container');
+  container.innerHTML = ' ';
+
+  submissions.forEach(submission => {
+    const button = document.createElement('button');
+    button.textContent = `${submission.name} - ${submission.status}`;
+    container.appendChild(button);
+  });
+}
+
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  chrome.tabs.sendMessage(tabs[0].id, { action: "getSubmissions" }, (response) => {
+    if (response && response.submissions) {
+      createSubmissionButtons(response.submissions);
+    } else {
+      document.getElementById('submissions-container').textContent = "No submissions found.";
+    }
+  });
+});
