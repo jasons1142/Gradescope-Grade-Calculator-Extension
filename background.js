@@ -13,7 +13,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
         if (tab.url && tab.url.includes("gradescope.com/courses")){
             chrome.action.setPopup({popup: 'popup.html'});
         } else{
-            chrome.action.setPopup({popup: 'NotOnGradescope.html});
+            chrome.action.setPopup({popup: 'NotOnGradescope.html'});
         }
     }
 });
