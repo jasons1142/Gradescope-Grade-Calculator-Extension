@@ -42,7 +42,7 @@ function textBoxes(grades){
     
 };
 
-function createSubmissionButtons(submissions) {
+/* function createSubmissionButtons(submissions) {
   const container = document.getElementById('submissions-container');
   container.innerHTML = ' ';
 
@@ -62,3 +62,4 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     }
   });
 });
+*/
