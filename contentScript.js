@@ -1,9 +1,26 @@
 //alert('Hello')
-//function extractScores() {
-    //const scoreElements = document.getElementsByClassName("submissionStatus--score");
-    //const scores = Array.from(scoreElements).map(el=>parseFloat(el.innerText));
-    //return scores;
-//}
+function extractSubmissions() {
+    const submissions = [];
+    const submissionRows = document.querySelectorAll('tr.odd, tr.even');
+
+    submissionRows.forEach(row => {
+        const nameElement = row.querySelector('th.table--primarylink');
+        const statusElement = row.querySelector('td.submission-status');
+        if (nameElement && statusElement) {
+            const name = nameElement.innerText.trim();
+            const status = statusElement.innerText.trim();
+            submissions.push({ name, status })
+        }
+    });
+    return submissions;
+}
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "getSubmissions") {
+        const submissions = extractSubmissions();
+        sendResponse({submissions: submissions});
+    }
+});
 
 //function calculateAverage(scores) {
    // if (scores.length == 0) return 0;
