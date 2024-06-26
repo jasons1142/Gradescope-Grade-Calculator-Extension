@@ -4,7 +4,7 @@
     const assignmentRows = document.querySelectorAll('tr.odd, tr.even');
 
     submissionRows.forEach(row => {
-        const nameElement = row.querySelector('th.table--primarylink');
+        const nameElement = row.querySelector('th a');
         if (nameElement) {
             const name = nameElement.innerText.trim();
             assignments.push(name);
