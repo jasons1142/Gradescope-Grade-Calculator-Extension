@@ -34,7 +34,7 @@ function receivedMessage(request, sender, sendResponse){
     //}
 };
 
-/* function createAssignmentButtons(assignments) {
+ function createAssignmentButtons(assignments) {
   const container = document.getElementById('assignments-container');
   container.innerHTML = ' ';
 
@@ -54,7 +54,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     }
   });
 });
-*/
+
 
 function checkBoxes(grades){
     
