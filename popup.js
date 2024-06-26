@@ -47,7 +47,7 @@ function receivedMessage(request, sender, sendResponse){
 
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   chrome.tabs.sendMessage(tabs[0].id, { action: "getAssignments" }, (response) => {
-    if (response && response.assignments) {
+    if (response && response.assignments && response.assignments.length > 0) {
       createAssignmentButtons(response.assignments);
     } else {
       document.getElementById('assignments-container').textContent = "No assignments found.";
