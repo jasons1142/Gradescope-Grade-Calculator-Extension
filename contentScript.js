@@ -1,6 +1,6 @@
 //alert('Hello')
-/* function extractAssignments() {
-    const assignemtn = [];
+ function extractAssignments() {
+    const assignemts = [];
     const assignmentRows = document.querySelectorAll('tr.odd, tr.even');
 
     submissionRows.forEach(row => {
@@ -15,11 +15,11 @@
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "getAssignments") {
-        const  = extractAssignments();
+        const  assignments = extractAssignments();
         sendResponse({assignments: assignments});
     }
 });
-*/
+
 
 //function calculateAverage(scores) {
    // if (scores.length == 0) return 0;
