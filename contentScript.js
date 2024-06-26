@@ -1,24 +1,22 @@
 //alert('Hello')
-/* function extractSubmissions() {
-    const submissions = [];
-    const submissionRows = document.querySelectorAll('tr.odd, tr.even');
+/* function extractAssignments() {
+    const assignemtn = [];
+    const assignmentRows = document.querySelectorAll('tr.odd, tr.even');
 
     submissionRows.forEach(row => {
         const nameElement = row.querySelector('th.table--primarylink');
-        const statusElement = row.querySelector('td.submission-status');
-        if (nameElement && statusElement) {
+        if (nameElement) {
             const name = nameElement.innerText.trim();
-            const status = statusElement.innerText.trim();
-            submissions.push({ name, status })
+            assignments.push(name);
         }
     });
-    return submissions;
+    return assignments;
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === "getSubmissions") {
-        const submissions = extractSubmissions();
-        sendResponse({submissions: submissions});
+    if (request.action === "getAssignments") {
+        const  = extractAssignments();
+        sendResponse({assignments: assignments});
     }
 });
 */
