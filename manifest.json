@@ -10,7 +10,7 @@
         "128": "icon.png"
     },
     "action": {
-        "default_popup": "NotOnGradescopePopup.html",
+        "default_popup": "popup.html",
         "default_icon": {
             "16": "icon.png",
             "48": "icon.png",
