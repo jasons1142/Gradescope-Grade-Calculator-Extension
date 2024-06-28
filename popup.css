@@ -54,3 +54,18 @@ body{
     font-size: 12px;
 }
 
+#circleButton {
+  width: 5px; 
+  height: 5px;
+  border-radius: 50%; 
+  background-color: transparent; 
+  border: none; 
+  outline: none; 
+  cursor: pointer; 
+}
+
+#circleButton.clicked {
+  background-color: blue; 
+  color: white; 
+}
+
