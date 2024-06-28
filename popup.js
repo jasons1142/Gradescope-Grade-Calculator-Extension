@@ -36,7 +36,7 @@ function receivedMessage(request, sender, sendResponse){
 
  function createAssignmentCheckboxes(assignments) {
   const container = document.getElementById('assignments-container');
-  container.innerHTML = ' ';
+  container.innerHTML = '';
 
   assignments.forEach(assignment => {
     const checkbox = document.createElement('input');
@@ -70,7 +70,7 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
     }
 
     console.log('Received response:', response);
-    if (response && response.assignments && response.assigments.length > 0) {
+    if (response && response.assignments && response.assignments.length > 0) {
       createAssignmentCheckboxes(response.assignments);
     } else {
       document.getElementById('assignments-container').textContent = "No assignments found.";
