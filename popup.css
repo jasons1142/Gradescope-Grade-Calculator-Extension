@@ -54,7 +54,4 @@ body{
     font-size: 12px;
 }
 
-.overflow {
-    max-height: 350px; 
-    overflow-y: scroll;
-}
+
