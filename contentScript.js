@@ -1,12 +1,12 @@
 //alert('Hello')
  function extractAssignments() {
-    const assignments = [];
-    const assignmentRows = document.querySelectorAll('tr.odd, tr.even');
+    const assignments = []; //creating array of assignments
+    const assignmentRows = document.querySelectorAll('tr.odd, tr.even'); //get all the rows from gradescope
 
-    assignmentRows.forEach(row => {
-        const nameElement = row.querySelector('th.table--primaryLink a');
+    assignmentRows.forEach(row => { //for each row
+        const nameElement = row.querySelector('th.table--primaryLink a'); //get the name of the assignment
         if (nameElement) {
-            const name = nameElement.innerText.trim();
+            const name = nameElement.innerText.trim(); 
             assignments.push(name);
         }
     });
