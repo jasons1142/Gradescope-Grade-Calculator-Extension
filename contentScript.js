@@ -1,6 +1,6 @@
 //alert('Hello')
  function extractAssignments() {
-    const assignemts = [];
+    const assignments = [];
     const assignmentRows = document.querySelectorAll('tr.odd, tr.even');
 
     assignmentRows.forEach(row => {
