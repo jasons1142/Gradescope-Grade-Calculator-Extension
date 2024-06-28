@@ -38,7 +38,7 @@ function receivedMessage(request, sender, sendResponse){
   const container = document.getElementById('assignments-container');
   container.innerHTML = ' ';
 
-  submissions.forEach(assignment => {
+  assignments.forEach(assignment => {
     const button = document.createElement('button');
     button.textContent = assignment;
     container.appendChild(button);

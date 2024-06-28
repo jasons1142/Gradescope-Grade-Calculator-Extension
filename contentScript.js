@@ -3,7 +3,7 @@
     const assignemts = [];
     const assignmentRows = document.querySelectorAll('tr.odd, tr.even');
 
-    submissionRows.forEach(row => {
+    assignmentRows.forEach(row => {
         const nameElement = row.querySelector('th.table--primaryLink a');
         if (nameElement) {
             const name = nameElement.innerText.trim();
