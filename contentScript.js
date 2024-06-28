@@ -1,14 +1,3 @@
-//alert('Hello')
- chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { //;istening for when the tab is changed
-  if (changeInfo.status === "complete") {
-    chrome.tabs.get(tabId, function(updatedTab) {
-      chrome.runtime.sendMessage({ //send a message with the url change
-        from: 'content',
-        url: updatedTab.url
-      });
-    });
-  }
-});
 
 
 function extractAssignments() {
