@@ -31,7 +31,7 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   chrome.tabs.sendMessage(tabs[0].id, {action: "getAssignments"}, (response) => { //send message to contentscript so we can extract data
     if (chrome.runtime.lastError) { //error case
       console.error('Error sending message:', chrome.runtime.lastError);
-      document.getElementById('NotOnGradescope').textContent = "Uh oh, looks like you're not on Gradescope. To calculate your average, navigate to a course on Gradescope and refresh!";
+      chrome.action.setPopup({ popup: 'NotOnGradescopePopup.html' });
       return;
     }
 
