@@ -11,6 +11,9 @@ body{
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+.textboxstyle{
+  left: 20%;
+}
 
     .button{
         background-color: #000000;
