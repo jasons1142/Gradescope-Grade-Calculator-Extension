@@ -1,6 +1,6 @@
  function createAssignmentCheckboxes(assignments) {
   const container = document.getElementById('assignments-container'); //formatting the class in popup.html
-  container.innerHTML = '';
+  container.innerHTML = ''; //clearing out content within container
 
   assignments.forEach(assignment => { //for each assignment
     const checkbox = document.createElement('input'); //create textbox
