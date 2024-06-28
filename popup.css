@@ -56,19 +56,4 @@ body{
     overflow-y:scroll;
 }
 
-#selectionButton{
-  background-color: #FFFFFF; /* white */
-  border: transparent;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 50%;
-  top: 75%;
-}
-
-#selectionButtonClicked{
-  background-color: #5166FF; /* blue */
-  border: 1px solid white;
-}
-
 
