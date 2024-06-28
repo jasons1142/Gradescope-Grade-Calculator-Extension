@@ -30,17 +30,4 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 //const scores = extractScores();
 //const average = calculateAverage(scores);
 
-//function for finding if the user has changed tabs
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  if (changeInfo.status === "complete") { //if we have changed the tab
-    chrome.tabs.get(tabId, function(updatedTab) { //get the tab
-      chrome.runtime.sendMessage({ //send message with current tab
-        from: 'content',
-        isOnGradescope: updatedTab
-      });
-    });
-  }
-});
-
-
 
