@@ -34,21 +34,44 @@ function receivedMessage(request, sender, sendResponse){
     //}
 };
 
- function createAssignmentButtons(assignments) {
+ function createAssignmentCheckboxes(assignments) {
   const container = document.getElementById('assignments-container');
   container.innerHTML = ' ';
 
   assignments.forEach(assignment => {
-    const button = document.createElement('button');
-    button.textContent = assignment;
-    container.appendChild(button);
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = assignment;
+    checkbox.name = 'assignments';
+    checkbox.value = assignment;
+
+    const label = document.createElement('label');
+    label.htmlFor = assignment;
+    label.textContent = assignment;
+
+    container.appendChild(checkbox);
+    container.appendChild(label);
+
+    container.appendChild(document.createElement('br'))
   });
 }
 
-chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  chrome.tabs.sendMessage(tabs[0].id, { action: "getAssignments" }, (response) => {
-    if (response && response.assignments && response.assignments.length > 0) {
-      createAssignmentButtons(response.assignments);
+chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
+  if (tabs.length == 0) {
+    console.error('No active tabs found');
+    return;
+  }
+
+  chrome.tabs.sendMessage(tabs[0].id, {action: "getAssignments"}, (response) => {
+    if (chrome.runtime.lastError) {
+      console.error('Error sending message:', chrome.runtime.lastError);
+      document.getElementById('assignments-container').textContent = "Error retrieving assingments.";
+      return;
+    }
+
+    console.log('Received response:', response);
+    if (response && response.assignments && response.assigments.length > 0) {
+      createAssignmentCheckboxes(response.assignments);
     } else {
       document.getElementById('assignments-container').textContent = "No assignments found.";
     }
