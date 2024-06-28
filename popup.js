@@ -28,10 +28,17 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
     return;
   }
 
+
   chrome.tabs.sendMessage(tabs[0].id, {action: "getAssignments"}, (response) => { //send message to contentscript so we can extract data
     if (chrome.runtime.lastError) { //error case
       console.error('Error sending message:', chrome.runtime.lastError);
-      document.getElementById('NotOnGradescope').textContent = "Uh oh. looks like you're not on Gradescope. To calculate your average, navigate to a course on Gradescope and refresh!";
+      document.getElementById('NotOnGradescope').innerHTML = `
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <p style="text-align: center;">
+      Uh oh. Looks like you're not on Gradescope. To calculate your average, navigate to a course on Gradescope and refresh!
+    </p>
+  </div>
+`;
       return;
     }
 
