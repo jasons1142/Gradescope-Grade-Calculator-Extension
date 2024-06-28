@@ -6,19 +6,6 @@ document.addEventListener("DOMContentLoaded", function(){getData()}); //once loa
 //}
 
 
-//send message to gradescope so that we may get data
-function getData(){
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){
-        let message = {
-            txt: "getmydata"
-        }
-        chrome.tabs.sendMessage(tabs[0].id, message); //send message to current window
-    });
-}
-
-//check if we received message and if we did call function
-chrome.runtime.onMessage.addListener(receivedMessage);
-
 function receivedMessage(request, sender, sendResponse){
 
     //if (request.length != # assignments) {
@@ -62,18 +49,18 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
     return;
   }
 
-  chrome.tabs.sendMessage(tabs[0].id, {action: "getAssignments"}, (response) => {
-    if (chrome.runtime.lastError) {
+  chrome.tabs.sendMessage(tabs[0].id, {action: "getAssignments"}, (response) => { //send message to background ao we can extract data
+    if (chrome.runtime.lastError) { //error case
       console.error('Error sending message:', chrome.runtime.lastError);
       document.getElementById('assignments-container').textContent = "Error retrieving assingments.";
       return;
     }
 
-    console.log('Received response:', response);
-    if (response && response.assignments && response.assignments.length > 0) {
-      createAssignmentCheckboxes(response.assignments);
+    console.log('Received response:', response); 
+    if (response && response.assignments && response.assignments.length > 0) { //if we received a response
+      createAssignmentCheckboxes(response.assignments); //create checkboxes
     } else {
-      document.getElementById('assignments-container').textContent = "No assignments found.";
+      document.getElementById('assignments-container').textContent = "No assignments found."; 
     }
   });
 });
