@@ -30,15 +30,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 //const scores = extractScores();
 //const average = calculateAverage(scores);
 
-//function for finding if extension is running on gradescope.com/courses
-function isOnGradescope(url) {
-  return url.includes("gradescope.com/courses");
-}
-
-// Sending a message to the extension with result
-chrome.runtime.sendMessage({
-  from: 'content',
-  isOnGradescope: isOnGradescope(window.location.href)
+//function for finding if the user has changed tabs
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  if (changeInfo.status === "complete") { //if we have changed the tab
+    chrome.tabs.get(tabId, function(updatedTab) { //get the tab
+      chrome.runtime.sendMessage({ //send message with current tab
+        from: 'content',
+        isOnGradescope: updatedTab
+      });
+    });
+  }
 });
+
 
 
