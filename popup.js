@@ -1,6 +1,3 @@
-//load in content
-document.addEventListener("DOMContentLoaded", function(){getData()}); //once loaded in get the data from gradescope
-
  function createAssignmentCheckboxes(assignments) {
   const container = document.getElementById('assignments-container');
   container.innerHTML = '';
