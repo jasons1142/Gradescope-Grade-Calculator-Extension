@@ -1,5 +1,17 @@
 //alert('Hello')
- function extractAssignments() {
+ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { //;istening for when the tab is changed
+  if (changeInfo.status === "complete") {
+    chrome.tabs.get(tabId, function(updatedTab) {
+      chrome.runtime.sendMessage({ //send a message with the url change
+        from: 'content',
+        url: updatedTab.url
+      });
+    });
+  }
+});
+
+
+function extractAssignments() {
     const assignments = []; //creating array of assignments
     const assignmentRows = document.querySelectorAll('tr.odd, tr.even'); //get all the rows from gradescope
 
