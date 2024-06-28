@@ -52,6 +52,8 @@ body{
 #assignments-container {
     color: black;
     font-size: 12px;
+    max-height:250px;
+    overflow-y:scroll;
 }
 
 
