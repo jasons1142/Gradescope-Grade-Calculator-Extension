@@ -31,7 +31,7 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   chrome.tabs.sendMessage(tabs[0].id, {action: "getAssignments"}, (response) => { //send message to contentscript so we can extract data
     if (chrome.runtime.lastError) { //error case
       console.error('Error sending message:', chrome.runtime.lastError);
-      chrome.action.setPopup({ popup: 'NotOnGradescopePopup.html' });
+      document.getElementById('assignments-container').textContent = "Error retrieving assingments.";
       return;
     }
 
