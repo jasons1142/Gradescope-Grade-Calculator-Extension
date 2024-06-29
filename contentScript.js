@@ -6,9 +6,18 @@ function extractAssignments() {
 
     assignmentRows.forEach(row => { //for each row
         const nameElement = row.querySelector('th.table--primaryLink a'); //get the name of the assignment
+        const scoreElement = row.querySelector('td.submissionStatus div.submissionStatus--score'); //get the score received on the assingment
         if (nameElement) { //checking to see if the name element exists
             const name = nameElement.innerText.trim(); 
-            assignments.push(name);
+            let score = null;
+
+            if (scoreElement) {
+            const scoreText = scoreElement.innerText.trim();
+                if (!isNaN(scoreText)) {
+                    score = parseFloat(scoreText);
+                }
+            }
+            assignments.push({name, score});
         }
         
     });
