@@ -23,7 +23,11 @@
 }
 
 function calculateAverages(assignments) {
-
+  let sum = 0;
+  for (let i = 0; i < assignments.length; i++) {
+    sum += assignments[i].score;
+  }
+  return sum/assignments.length
 }
 
 chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
