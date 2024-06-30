@@ -5,17 +5,17 @@
   assignments.forEach(assignment => { //for each assignment
     let checkbox = document.createElement('input'); //create textbox
     checkbox.type = 'checkbox';
-    checkbox.id = assignment.name;
+    checkbox.id = assignment.name; //gives the checkbox a unique id, the name of the assignment
     checkbox.name = 'assignments';
-    checkbox.value = assignment.score;
+    checkbox.value = assignment.score; //gives the checkbox a value, the score received
 
     const label = document.createElement('label'); //create label
     label.htmlFor = assignment.name;
-    label.textContent = assignment.name;
+    label.textContent = assignment.name; //text content of the label is the name of the assignment
 
     //append checkbox and label together
     container.appendChild(checkbox);
-    container.appendChild(label);
+    container.appendChild(label); 
 
     //start a new line for next checkbox and label
     container.appendChild(document.createElement('br'))
