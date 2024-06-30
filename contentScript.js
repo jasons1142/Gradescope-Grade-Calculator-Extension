@@ -16,9 +16,9 @@ function extractAssignments() {
                 if (scoreText.includes('/')) { //checking to see if the score has a '/'
                     const parts = scoreText.split('/'); //splitting the fraction into two parts in an array
                     if (parts.length === 2) { //checking to make sure that parts has two elements
-                        const numerator = parseFloat(parts[0].trim); //making the numerator the first part that was split
-                        const denominator = parseFloat(parts[1].trim);//making the denominator the second part that was split
-                        if (!isNaN(denominator) && !isNaN(numerator) && denominator != 0) { //making sure the numerator and denominator are numbers and the denominator is not 0
+                        const numerator = parseFloat(parts[0].trim()); //making the numerator the first part that was split
+                        const denominator = parseFloat(parts[1].trim());//making the denominator the second part that was split
+                        if (!isNaN(denominator) && !isNaN(numerator) && denominator !== 0) { //making sure the numerator and denominator are numbers and the denominator is not 0
                             score = numerator/denominator; //making the score the quotient of numerator/denominator
                         }
                     }
