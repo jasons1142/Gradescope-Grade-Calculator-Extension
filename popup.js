@@ -3,7 +3,7 @@
   container.innerHTML = ''; //clearing out content within container
 
   assignments.forEach(assignment => { //for each assignment
-    const checkbox = document.createElement('input'); //create textbox
+    let checkbox = document.createElement('input'); //create textbox
     checkbox.type = 'checkbox';
     checkbox.id = assignment.name;
     checkbox.name = 'assignments';
@@ -20,6 +20,10 @@
     //start a new line for next checkbox and label
     container.appendChild(document.createElement('br'))
   });
+}
+
+function calculateAverages(assignments) {
+
 }
 
 chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
