@@ -74,10 +74,10 @@ document.addEventListener('click', function (event) { //event listener for when 
 
   if (targetId === 'SelectAll') { //if we clicked Select All
     SelectAllCheckboxes(); //call the function
-    DeselectAllButton.checked = false;
+    DeselectAllButton.checked = false; //uncheck the other button
   } else if (targetId === 'DeselectAll') { //if we clicked Deselect All
     DeselectAllCheckboxes(); //call that function
-    SelectAllButton.checked = false;
+    SelectAllButton.checked = false; //uncheck the other button
   }
 });
 
