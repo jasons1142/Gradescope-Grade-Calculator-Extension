@@ -67,17 +67,27 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   });
 });
 
- document.getElementById('SelectAll').addEventListener('change', function () { //creating a function to select all assignments when button SelectAll is clicked
+document.addEventListener('click', function (event) { //event listener for when we get a click on either SelectAll or DeselectAll
+  const targetId = event.target.id;
+
+  if (targetId === 'SelectAll') { //if we clicked Select All
+    SelectAllCheckboxes(); //call the function
+  } else if (targetId === 'DeselectAll') { //if we clicked Deselect All
+    DeselectAllCheckboxes(); //call that function
+  }
+});
+
+ function SelectAllCheckboxes () { //creating a function to select all assignments when button SelectAll is clicked
     let checkboxes = document.querySelectorAll('input[name="assignments"]');
     checkboxes.forEach(function (checkbox) {
-                checkbox.checked = this.checked;
-    }, this);
- });
+                checkbox.checked = true;
+    });
+ }
 
-document.getElementById('DeselectAll').addEventListener('change', function () { //creating a function to deselect all assignments when button DeselectAll is clicked
+function DeselectAllCheckboxes() { //creating a function to deselect all assignments when button DeselectAll is clicked
     let checkboxes = document.querySelectorAll('input[name="assignments"]');
     checkboxes.forEach(function (checkbox) {
                 checkbox.checked = false;
-    }, this);
- });
+    });
+ }
 
