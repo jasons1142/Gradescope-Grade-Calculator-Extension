@@ -35,6 +35,10 @@ function calculateAverages() {
   const average = sum/checkboxes.length; //calculating the average
   document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`; //text content of an HTML aspect with the id 'average-score' will be updated to hold the average score to two decimal places
 
+  document.getElementById('assignments-container').style.display = 'none';
+  document.getElementById('calculate-average').style.display = 'none';
+  document.getElementById('average-score').style.display = 'block';
+
   return average;
 }
 
