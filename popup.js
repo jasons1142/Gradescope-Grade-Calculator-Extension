@@ -22,13 +22,22 @@
   });
 }
 
-function calculateAverages(assignments) {
+function calculateAverages() {
+  const checkboxes = document.querySelectorAll('input[name="assignments"]:checked');
+    if (checkboxes.length === 0) {
+        document.getElementById('average-score').textContent = 'No assignments selected.';
+        return;
+    }
   let sum = 0;
-  for (let i = 0; i < assignments.length; i++) {
-    sum += assignments[i].score;
+  for (let i = 0; i < checkboxes.length; i++) {
+    sum += parseFloat(checkboxes[i].value);
   }
-  return sum/assignments.length
+  const average = sum/checkboxes.length;
+  document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`;
+
+  return average;
 }
+document.getElementById('calculate-average').addEventListener('click', calculateAverages);
 
 chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   if (tabs.length == 0) {
