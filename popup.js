@@ -23,21 +23,22 @@
 }
 
 function calculateAverages() {
-  const checkboxes = document.querySelectorAll('input[name="assignments"]:checked');
-    if (checkboxes.length === 0) {
+  const checkboxes = document.querySelectorAll('input[name="assignments"]:checked'); //creating an array of all the elements that are actually checked off
+    if (checkboxes.length === 0) { //checking to see if elements are actually clicked
         document.getElementById('average-score').textContent = 'No assignments selected.';
         return;
     }
   let sum = 0;
-  for (let i = 0; i < checkboxes.length; i++) {
-    sum += parseFloat(checkboxes[i].value);
+  for (let i = 0; i < checkboxes.length; i++) { //for loop that adds up all the values in the checked off boxes
+    sum += parseFloat(checkboxes[i].value); //parseFloat turns the string into a float
   }
-  const average = sum/checkboxes.length;
-  document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`;
+  const average = sum/checkboxes.length; //calculating the average
+  document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`; //text content of an HTML aspect with the id 'average-score' will be updated to hold the average score to two decimal places
 
   return average;
 }
-document.getElementById('calculate-average').addEventListener('click', calculateAverages);
+
+document.getElementById('calculate-average').addEventListener('click', calculateAverages); //calculate averages will be run when the user clicks on an something with the id 'calculate-average'
 
 chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   if (tabs.length == 0) {
