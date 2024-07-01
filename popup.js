@@ -69,11 +69,15 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
 
 document.addEventListener('click', function (event) { //event listener for when we get a click on either SelectAll or DeselectAll
   const targetId = event.target.id;
+  let SelectAllButton = document.getElementById('SelectAll');
+  let DeselectAllButton = document.getElementById('DeselectAll');
 
   if (targetId === 'SelectAll') { //if we clicked Select All
     SelectAllCheckboxes(); //call the function
+    DeselectAllButton.checked = false;
   } else if (targetId === 'DeselectAll') { //if we clicked Deselect All
     DeselectAllCheckboxes(); //call that function
+    SelectAllButton.checked = false;
   }
 });
 
