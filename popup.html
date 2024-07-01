@@ -16,24 +16,26 @@
     
     <div id= "NotOnGradescope">
         
-    <p style="text-align:center;">Select assignments to calculate average.</p>
+        <p style="text-align:center;">Select assignments to calculate average.</p>
     
-    <div class= "textboxstyle"> <!-- centering checkboxes -->
-        <div id ="assignments-container"></div>
-    </div>
+        <div class= "textboxstyle"> <!-- centering checkboxes -->
+            <div id ="assignments-container"></div>
+        </div>
     
-    <script src = "popup.js" defer></script>
+        <script src = "popup.js" defer></script>
 
-    <!-- SelectAll and DeselectAll Buttons -->
-    <input type="checkbox" id="SelectAll" name="SelectAllButton" value="na">
-    <label for="SelectAll"> Select All</label>
-    <input type="checkbox" id="DeselectAll" name="DeselectAllButton" value="na">
-    <label for="DeselectAll"> Deselect All</label>
+        <!-- SelectAll and DeselectAll Buttons -->
+        <div class="SelectionButtons">
+            <input type="checkbox" id="SelectAll" name="SelectAllButton" value="na">
+            <label for="SelectAll"> Select All</label>
+            <input type="checkbox" id="DeselectAll" name="DeselectAllButton" value="na">
+            <label for="DeselectAll"> Deselect All</label>
+        </div>
         
-    <div class="centerbutton"> <!-- centering button -->
-        <button id = "calculate-average" class="button button1">Calculate</button> <!--Calculate button-->
-        <p id="average-score"></p> <!--Average score display after Calculate clicked-->
-    </div>
+        <div class="centerbutton"> <!-- centering button -->
+            <button id = "calculate-average" class="button button1">Calculate</button> <!--Calculate button-->
+            <p id="average-score"></p> <!--Average score display after Calculate clicked-->
+        </div>
         
     </div> <!-- NotOnGradescope in case of error replacing everything in here --> 
    
