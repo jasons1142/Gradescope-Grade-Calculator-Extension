@@ -56,7 +56,7 @@ body{
     overflow-y:scroll;
 }
 
-#SelectionButtons{
+.SelectionButtons{
   top: 75%;
   left: 50%;
 }
