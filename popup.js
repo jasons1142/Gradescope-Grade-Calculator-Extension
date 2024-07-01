@@ -67,5 +67,17 @@ chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   });
 });
 
+ document.getElementById('SelectAll').addEventListener('change', function () { //creating a function to select all assignments when button SelectAll is clicked
+    let checkboxes = document.querySelectorAll('input[name="assignments"]');
+    checkboxes.forEach(function (checkbox) {
+                checkbox.checked = this.checked;
+    }, this);
+ });
 
+document.getElementById('DeselectAll').addEventListener('change', function () { //creating a function to deselect all assignments when button DeselectAll is clicked
+    let checkboxes = document.querySelectorAll('input[name="assignments"]');
+    checkboxes.forEach(function (checkbox) {
+                checkbox.checked = false;
+    }, this);
+ });
 
