@@ -8,6 +8,8 @@
     checkbox.id = assignment.name; //gives the checkbox a unique id, the name of the assignment
     checkbox.name = 'assignments';
     checkbox.value = assignment.score; //gives the checkbox a value, the score received
+    checkbox.setAttribute('numerator', assignment.numerator); //set an attribute for the numerator of each checkbox
+    checkbox.setAttribute('denominator', assignment.denominator); //set an attribute for the denominator of each checkbox
 
     const label = document.createElement('label'); //create label
     label.htmlFor = assignment.name;
@@ -28,11 +30,13 @@ function calculateAverages() {
         document.getElementById('average-score').textContent = 'No assignments selected.';
         return;
     }
-  let sum = 0;
+  let numeratorsum = 0;
+  let denominatorsum = 0;
   for (let i = 0; i < checkboxes.length; i++) { //for loop that adds up all the values in the checked off boxes
-    sum += parseFloat(checkboxes[i].value); //parseFloat turns the string into a float
+    numeratorsum += parseFloat(checkboxes[i].getAttribute('numerator')); //parseFloat gets the string numerator and turns it into a number
+    denominatorsum += parseFloat(checkboxes[i].getAttribute('denominator')); //parseFloat gets the string numerator and turns it into a number
   }
-  const average = sum/checkboxes.length; //calculating the average
+  const average = numeratorsum/denominatorsum; //calculating the average
   document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`; //text content of an HTML aspect with the id 'average-score' will be updated to hold the average score to two decimal places
 
   return average;
