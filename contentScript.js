@@ -24,7 +24,7 @@ function extractAssignments() {
                     }
                 }
             }
-            assignments.push({name, score});
+            assignments.push({name, numerator, denominator}); //pushing an array with each element having a name, numerator, and denominator
         }
         
     });
