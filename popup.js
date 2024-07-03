@@ -36,7 +36,7 @@ function calculateAverages() {
     numeratorsum += parseFloat(checkboxes[i].getAttribute('numerator')); //parseFloat gets the string numerator and turns it into a number
     denominatorsum += parseFloat(checkboxes[i].getAttribute('denominator')); //parseFloat gets the string numerator and turns it into a number
   }
-  const average = numeratorsum/denominatorsum; //calculating the average
+  const average = (numeratorsum/denominatorsum)*100; //calculating the average
   document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`; //text content of an HTML aspect with the id 'average-score' will be updated to hold the average score to two decimal places
 
   return average;
