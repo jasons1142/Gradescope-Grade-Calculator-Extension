@@ -21,7 +21,7 @@
 
    if(assignment.numerator == null && assignment.denominator == null){//if it is submitted but not graded
 
-    let space = document.createTextNode('  '); //adding space before textbox
+    let space = document.createTextNode('   '); //adding space before textbox
     container.appendChild(space);
     
     let textbox = document.createElement('input'); //create textbox
@@ -32,7 +32,7 @@
     textbox.style.width = '10%';
     
     container.appendChild(textbox); //add a textbox for user input
-
+    container.appendChild(space);
     let slash = document.createTextNode('/');
     container.appendChild(slash);
     
