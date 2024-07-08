@@ -32,7 +32,8 @@
     textbox.style.width = '10%';
     
     container.appendChild(textbox); //add a textbox for user input
-    container.appendChild(space);
+    let extraspace = document.createTextNode('   ');
+    container.appendChild(extraspace);
     let slash = document.createTextNode('/');
     container.appendChild(slash);
     
