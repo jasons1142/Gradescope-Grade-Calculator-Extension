@@ -19,7 +19,7 @@
     container.appendChild(checkbox);
     container.appendChild(label); 
 
-   if(checkbox.numerator == null && checkbox.denominator == null){//if it is submitted but not graded
+   if(assignment.numerator == null && assignment.denominator == null){//if it is submitted but not graded
     let textbox = document.createElement('input'); //create textbox
     textbox.type = 'textbox';
     textbox.id = assignment.name;
