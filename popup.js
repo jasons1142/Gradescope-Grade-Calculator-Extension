@@ -3,7 +3,7 @@
   container.innerHTML = ''; //clearing out content within container
 
   assignments.forEach(assignment => { //for each assignment
-    let checkbox = document.createElement('input'); //create textbox
+    let checkbox = document.createElement('input'); //create checkbox
     checkbox.type = 'checkbox';
     checkbox.id = assignment.name; //gives the checkbox a unique id, the name of the assignment
     checkbox.name = 'assignments';
@@ -19,6 +19,16 @@
     container.appendChild(checkbox);
     container.appendChild(label); 
 
+   if(checkbox.numerator == null && checkbox.denominator == null){//if it is submitted but not graded
+    let textbox = document.createElement('input'); //create textbox
+    textbox.type = 'textbox';
+    textbox.id = assignment.name;
+    textbox.name = 'grade';
+    textbox.value = null;
+
+    container.appendChild(textbox); //add a textbox for user input
+    
+   } 
     //start a new line for next checkbox and label
     container.appendChild(document.createElement('br'))
   });
