@@ -25,8 +25,8 @@
     textbox.id = assignment.name;
     textbox.name = 'grade';
     textbox.value = null;
-    textbox.style.width = '5%';
-    textbox.style.paddingLeft = '50px';
+    textbox.style.width = '10%';
+    
 
     container.appendChild(textbox); //add a textbox for user input
     
