@@ -21,12 +21,12 @@
 
    if(assignment.numerator == null && assignment.denominator == null){//if it is submitted but not graded
     let textbox = document.createElement('input'); //create textbox
-    textbox.type = 'textbox';
+    textbox.type = 'text';
     textbox.id = assignment.name;
     textbox.name = 'grade';
     textbox.value = 'grade';
-    textbox.style.width = '50%';
-    textbox.style.paddingLeft = '5px';
+    textbox.style.width = '10%';
+    textbox.style.paddingLeft = '20px';
 
     container.appendChild(textbox); //add a textbox for user input
     
