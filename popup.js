@@ -20,6 +20,10 @@
     container.appendChild(label); 
 
    if(assignment.numerator == null && assignment.denominator == null){//if it is submitted but not graded
+
+    let space = document.createTextNode(' '); //adding space before textbox
+    container.appendChild(space);
+    
     let textbox = document.createElement('input'); //create textbox
     textbox.type = 'text';
     textbox.id = assignment.name;
@@ -27,7 +31,6 @@
     textbox.value = null;
     textbox.style.width = '10%';
     
-
     container.appendChild(textbox); //add a textbox for user input
     
    } 
