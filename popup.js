@@ -63,6 +63,12 @@ function calculateAverages() {
 
    const inputs = document.getElementsByName('grade'); //get a list of all the textboxes
    for (let j = 0; j < inputs.length; j++) {
+      const checkbox = document.getElementById(inputs[j].id); // Get the corresponding checkbox
+    
+      if (!checkbox.checked) {
+        continue; // Skip validation if the checkbox is not checked
+      }
+
       const value = parseFloat(inputs[j].value); //get variable for each input
      
       if (isNaN(value)) { //if user did not input a valid number
