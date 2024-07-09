@@ -115,4 +115,3 @@ function DeselectAllCheckboxes() { //creating a function to deselect all assignm
                 checkbox.checked = false;
     });
  }
-
