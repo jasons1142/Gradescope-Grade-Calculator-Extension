@@ -63,7 +63,7 @@ function calculateAverages() {
 
    const inputs = document.getElementsByName('grade'); //get a list of all the textboxes
    for (let j = 0; j < inputs.length; j++) {
-      const value = pasrseFloat(inputs[j].value); //get variable for each input
+      const value = parseFloat(inputs[j].value); //get variable for each input
      
       if (isNaN(value)) { //if user did not input a valid number
         console.error(`Input is not a valid number for ${inputs[j].id}`); //send error
