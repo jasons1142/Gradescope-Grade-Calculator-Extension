@@ -30,7 +30,6 @@
     textbox.name = 'grade';
     textbox.value = null;
     textbox.style.width = '10%';
-    textbox.setAttribute('class', 'input');
     
     container.appendChild(textbox); //add a textbox for user input
     let percentage = document.createTextNode('   %');
@@ -50,11 +49,30 @@ function calculateAverages() {
     }
   let numeratorsum = 0;
   let denominatorsum = 0;
+ 
   for (let i = 0; i < checkboxes.length; i++) { //for loop that adds up all the values in the checked off boxes
     if(checkboxes[i].getAttribute('numerator') != null && checkboxes[i].getAttribute('denominator') != null){ //if it is not ungraded
       numeratorsum += parseFloat(checkboxes[i].getAttribute('numerator')); //parseFloat gets the string numerator and turns it into a number
       denominatorsum += parseFloat(checkboxes[i].getAttribute('denominator')); //parseFloat gets the string numerator and turns it into a number
     };
+
+   var inputs = document.getElementsByName('grade'); //get a list of all the textboxes
+   for (let j = 0; j < inputs.length; j++) {
+     if(inputs[j].checked == true){ //if the checkbox is checked off
+       if(inputs[j].value < 0 || inputs[j].value > 100){
+        //user will receive number error "Input is not a valid numer"
+       };
+       if(inputs[j].value == null){ //if they didn't put anything but they checked it off
+        //user will receive error "Graded needed for inputs[j].id"
+       };
+      else{ //the number is valid and they have put something in
+        numeratorsum += inputs[j].value;
+        denominatorsum += 100;
+      };
+      
+     };
+   }
+   
   }
   const average = (numeratorsum/denominatorsum)*100; //calculating the average
   document.getElementById('average-score').textContent = `Average score: ${average.toFixed(2)}`; //text content of an HTML aspect with the id 'average-score' will be updated to hold the average score to two decimal places
