@@ -89,7 +89,7 @@ function calculateAverages() {
       const value2 = parseFloat(inputs2[j].value); //get the value for each right input
      
       if (isNaN(value) && isNaN(value2)) { //if user did not input a grade
-        document.getElementById('average-score').textContent = 'Grade needed for assignment(s)'; //display error
+        document.getElementById('average-score').textContent = 'Grade(s) needed'; //display error
         return; //end function
       }
       else if(isNaN(value) && !isNaN(value2)){ //if the user input a denominator but not a numerator
