@@ -86,17 +86,17 @@ function calculateAverages() {
       }
 
       const value = parseFloat(inputs[j].value); //get value for each left input
-      const value2 - parseFloat(inputs2[j].value); //get the value for each right input
+      const value2 = parseFloat(inputs2[j].value); //get the value for each right input
      
-      if (isNaN(value) && isNan(value2)) { //if user did not input a grade
+      if (isNaN(value) && isNaN(value2)) { //if user did not input a grade
         document.getElementById('average-score').textContent = 'Grade needed for assignment(s)'; //display error
         return; //end function
       }
-      else if(isNan(value) && !isNan(value2)){ //if the user input a denominator but not a numerator
+      else if(isNaN(value) && !isNaN(value2)){ //if the user input a denominator but not a numerator
         document.getElementById('average-score').textContent = 'Earned points missing'; //display error
         return; //end function
       }
-      else if(isNan(value2) && !isNan(value)){ //if the user input a numerator but not a denominator
+      else if(isNaN(value2) && !isNaN(value)){ //if the user input a numerator but not a denominator
         document.getElementById('average-score').textContent = 'Total points missing'; //display error
         return; //end function
       }
