@@ -30,12 +30,19 @@
     textbox.name = 'grade';
     textbox.value = null;
     textbox.style.width = '10%';
+
+    let textboxTwo = document.createElement('input'); //create textbox
+    textboxTwo.type = 'text';
+    textboxTwo.id = assignment.name;
+    textboxTwo.name = 'grade';
+    textboxTwo.value = null;
+    textboxTwo.style.width = '10%';
     
     container.appendChild(textbox); //add a textbox for user input
-    let percentage = document.createTextNode('   /   ');
-    container.appendChild(percentage);
+    let slash = document.createTextNode('   /   ');
+    container.appendChild(slash);
 
-    container.appendChild(textbox);
+    container.appendChild(textboxTwo);
     
    } 
     //start a new line for next checkbox and label
