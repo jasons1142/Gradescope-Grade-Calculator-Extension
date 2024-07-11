@@ -32,8 +32,10 @@
     textbox.style.width = '10%';
     
     container.appendChild(textbox); //add a textbox for user input
-    let percentage = document.createTextNode('   %');
+    let percentage = document.createTextNode('   /   ');
     container.appendChild(percentage);
+
+    container.appendChild(textbox);
     
    } 
     //start a new line for next checkbox and label
