@@ -80,7 +80,7 @@ function calculateAverages() {
         return; //end function
       } 
       else if(value < 0 || value > 100){ //if user put number outside of range
-        document.getElementById('average-score').textContent = `Grade(s) outside or range`; //display error
+        document.getElementById('average-score').textContent = `Grade(s) outside of range`; //display error
         return; //emd function
       }
       else { //otherwise we can add to numerator and denominator
