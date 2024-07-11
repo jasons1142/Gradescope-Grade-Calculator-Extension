@@ -43,40 +43,50 @@
 
 function calculateAverages() {
   const checkboxes = document.querySelectorAll('input[name="assignments"]:checked'); //creating an array of all the elements that are actually checked off
-    if (checkboxes.length === 0) { //checking to see if elements are actually clicked
-        document.getElementById('average-score').textContent = 'No assignments selected.';
-        return;
+    if (checkboxes.length === 0) { //if there are no elements checked off
+        document.getElementById('average-score').textContent = 'No assignments selected.'; //display error
+        return; //end function
     }
+
+  //initializing variables
   let numeratorsum = 0;
   let denominatorsum = 0;
  
   for (let i = 0; i < checkboxes.length; i++) { //for loop that adds up all the values in the checked off boxes
+   
     //declare variables
     const numerator = parseFloat(checkboxes[i].getAttribute('numerator'));
     const denominator = parseFloat(checkboxes[i].getAttribute('denominator'));
    
-    if (!isNaN(numerator) && !isNaN(denominator)) {
+    if (!isNaN(numerator) && !isNaN(denominator)) { //only adding the numerators and denominators that are not NaN
       numeratorsum += numerator;
       denominatorsum += denominator;
     }
+   
   }
 
    const inputs = document.getElementsByName('grade'); //get a list of all the textboxes
    for (let j = 0; j < inputs.length; j++) {
-      const checkbox = document.getElementById(inputs[j].id); // Get the corresponding checkbox
+      const checkbox = document.getElementById(inputs[j].id); // get the corresponding checkbox
     
-      if (!checkbox.checked) {
-        continue; // Skip validation if the checkbox is not checked
+      if (!checkbox.checked) { //if the checkbox of the input is not checked off
+        continue; // jump to next iteration of loop
       }
 
-      const value = parseFloat(inputs[j].value); //get variable for each input
+      const value = parseFloat(inputs[j].value); //get value for each input
      
       if (isNaN(value)) { //if user did not input a valid number
-        console.error(`Input is not a valid number for ${inputs[j].id}`); //send error
+        document.getElementById('average-score').textContent = 'Input is not a valid number'; //display error
+        return; //end function
       } 
-      else if (value === null || value < 0 || value > 100) { //if user did not input anything or its out of range
-        console.error(`Grade needed for ${inputs[j].id}`); //send error
+      else if (value === null) { //if user did not input anything
+        document.getElementById('average-score').textContent = `Grade needed for assignment(s)`; //display error
+        return; //end function
       } 
+      else if(value < 0 || value > 100){ //if user put number outside of range
+        document.getElementById('average-score').textContent = `Grade is outside of range`; //display error
+        return; //emd function
+      }
       else { //otherwise we can add to numerator and denominator
         numeratorsum += value;
         denominatorsum += 100;
