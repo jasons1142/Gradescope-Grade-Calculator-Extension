@@ -30,17 +30,17 @@
     textbox.name = 'grade';
     textbox.value = null;
     textbox.style.width = '10%';
-
-    let textboxTwo = document.createElement('input'); //create textbox
-    textboxTwo.type = 'text';
-    textboxTwo.id = assignment.name;
-    textboxTwo.name = 'grade2';
-    textboxTwo.value = null;
-    textboxTwo.style.width = '10%';
     
     container.appendChild(textbox); //add a textbox for user input
     let slash = document.createTextNode('   /   ');
     container.appendChild(slash);
+
+    let textboxTwo = document.createElement('input'); //create textbox
+    textboxTwo.type = 'text';
+    //textboxTwo.id = assignment.name;
+    textboxTwo.name = 'grade2';
+    textboxTwo.value = null;
+    textboxTwo.style.width = '10%';
 
     container.appendChild(textboxTwo);
     
