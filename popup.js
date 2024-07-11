@@ -34,7 +34,7 @@
     let textboxTwo = document.createElement('input'); //create textbox
     textboxTwo.type = 'text';
     textboxTwo.id = assignment.name;
-    textboxTwo.name = 'grade';
+    textboxTwo.name = 'grade2';
     textboxTwo.value = null;
     textboxTwo.style.width = '10%';
     
@@ -74,27 +74,39 @@ function calculateAverages() {
    
   }
 
-   const inputs = document.getElementsByName('grade'); //get a list of all the textboxes
-   for (let j = 0; j < inputs.length; j++) {
+   const inputs = document.getElementsByName('grade'); //get a list of the left input
+   const inputs2 = document.getElementsByName('grade2'); //get a list of the right input
+ 
+   for (let j = 0; j < inputs.length; j++) { //going through all the textboxes
+    
       const checkbox = document.getElementById(inputs[j].id); // get the corresponding checkbox
     
       if (!checkbox.checked) { //if the checkbox of the input is not checked off
         continue; // jump to next iteration of loop
       }
 
-      const value = parseFloat(inputs[j].value); //get value for each input
+      const value = parseFloat(inputs[j].value); //get value for each left input
+      const value2 - parseFloat(inputs2[j].value); //get the value for each right input
      
-      if (isNaN(value) || value === null) { //if user did not input a valid number
+      if (isNaN(value) && isNan(value2)) { //if user did not input a grade
         document.getElementById('average-score').textContent = 'Grade needed for assignment(s)'; //display error
         return; //end function
-      } 
-      else if(value < 0 || value > 100){ //if user put number outside of range
-        document.getElementById('average-score').textContent = `Grade(s) outside of range`; //display error
-        return; //emd function
+      }
+      else if(isNan(value) && !isNan(value2)){ //if the user input a denominator but not a numerator
+        document.getElementById('average-score').textContent = 'Earned points missing'; //display error
+        return; //end function
+      }
+      else if(isNan(value2) && !isNan(value)){ //if the user input a numerator but not a denominator
+        document.getElementById('average-score').textContent = 'Total points missing'; //display error
+        return; //end function
+      }
+      else if(value > value2){ //if numerator is greater than denominator
+        document.getElementById('average-score').textContent = `Invalid input for grade(s)`; //display error
+        return; //end function
       }
       else { //otherwise we can add to numerator and denominator
         numeratorsum += value;
-        denominatorsum += 100;
+        denominatorsum += value2;
       }
    }
    
