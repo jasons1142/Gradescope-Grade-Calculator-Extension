@@ -75,16 +75,12 @@ function calculateAverages() {
 
       const value = parseFloat(inputs[j].value); //get value for each input
      
-      if (isNaN(value)) { //if user did not input a valid number
-        document.getElementById('average-score').textContent = 'Input is not a valid number'; //display error
-        return; //end function
-      } 
-      else if (value === null) { //if user did not input anything
-        document.getElementById('average-score').textContent = `Grade needed for assignment(s)`; //display error
+      if (isNaN(value) || value === null) { //if user did not input a valid number
+        document.getElementById('average-score').textContent = 'Grade needed for assignment(s)'; //display error
         return; //end function
       } 
       else if(value < 0 || value > 100){ //if user put number outside of range
-        document.getElementById('average-score').textContent = `Grade is outside of range`; //display error
+        document.getElementById('average-score').textContent = `Grade(s) outside or range`; //display error
         return; //emd function
       }
       else { //otherwise we can add to numerator and denominator
