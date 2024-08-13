@@ -33,6 +33,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "getAssignments") {
         const  assignments = extractAssignments();
         sendResponse({assignments: assignments});
+        return true;
     }
 });
 
