@@ -117,7 +117,9 @@ function calculateAverages() {
   return average;
 }
 
-document.getElementById('calculate-average').addEventListener('click', calculateAverages); //calculate averages will be run when the user clicks on an something with the id 'calculate-average'
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('calculate-average').addEventListener('click', calculateAverages);
+}); //calculate averages will be run when the user clicks on an something with the id 'calculate-average'
 
 chrome.tabs.query({active: true, currentWindow: true }, (tabs) => {
   if (tabs.length == 0) {
