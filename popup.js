@@ -106,7 +106,7 @@ function calculateAverages() {
       }
       else { //otherwise we can add to numerator and denominator
         numeratorsum += value;
-        denominatorsum += value2;
+        denominatorsum += value2; // random comment
       }
    }
    
